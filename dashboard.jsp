@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ include file = "connect.jsp" %>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body class="main-content">
     <header class="section sec1 header active">
+<%
+String owner_email=(String)session.getAttribute("email");
+PreparedStatement pst = con.prepareStatement("select * from Owner_DB where EmailID = ?");
+pst.setString(1,owner_email);
+ResultSet rs = pst.executeQuery();
+String name = "";
+if(rs.next())
+name = rs.getString(1);
+
+%>
         <div class="main-title">
             <h2>
                 <span class="bg-text">My Dashboard</span>
-                <span class="fg-text">My Big <span>Nunu</span></span>
+                <span class="fg-text">Welcome Back <span><%=name%></span></span>
             </h2>
         </div>
         <div class="renter-details-container">
