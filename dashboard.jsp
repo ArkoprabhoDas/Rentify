@@ -69,6 +69,7 @@ String alert_url = "send_email.jsp?renter_email="+renter_email+"& month+"+month;
                 <div class="renter-btn">
                     <form action = <%=rent_pay_url%> method = "post"><button type="submit" >Rent Paid</button></form>
                     <form action = <%=alert_url%> method = "post"><button type="submit" >Send Alert</button>
+                    <form action=""></form>
                     <form action = <%=edit_renter_url%> method = "post"><button type="submit" >Edit</button></form>
                     <form action = <%=remove_renter_url%> method = "post"><button type="submit" >Remove</button></form>
                 </div>
