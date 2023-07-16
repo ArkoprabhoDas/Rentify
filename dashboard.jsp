@@ -50,7 +50,7 @@ String rent_pay_url = "rent_payDB.jsp?renter_email="+renter_email;
 String remove_renter_url = "remove_renterDB.jsp?renter_email="+renter_email;
 String edit_renter_url =  "edit.jsp?renter_email="+renter_email;
 String renter_pic_url = "pic_upload.jsp?renter_email="+renter_email;
-String alert_url = "sendemail.jsp?renter_email="+renter_email+"& month+"+month;
+String alert_url = "send_email.jsp?renter_email="+renter_email+"& month+"+month;
 %>
             <div class="renter-details">
                 <div class="renter-preview">
@@ -97,9 +97,11 @@ con.close();
             <i class="fa-regular fa-plus"></i>
         </button>
     </form>
-        <button class="control control-2" type="button" onclick="textFunc()">
+    <form action="send_email1.jsp">
+        <button class="control control-2" type="submit">
             <i class="fa-solid fa-reply-all"></i>
         </button>
+    </form>
     <form action = "log_out.jsp">
         <button class="control control-3" type="submit" >
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
