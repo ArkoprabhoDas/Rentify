@@ -9,7 +9,7 @@ ResultSet rs = pst.executeQuery();
 if(rs.next())
 {
   session.setAttribute("email",rs.getString(3));
-  response.sendRedirect("dashboard.jsp");
+  response.sendRedirect("update_rent_inf.jsp");
 }
 else
 {
