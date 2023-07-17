@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup | Rentify</title>
+    <script src="./checkEmail.js"></script>
     <link rel="stylesheet" href="styles/signup.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,7 +35,7 @@
 
         <!--Form-->
         <div class="form-container">
-          <form action="signupDB.jsp" method="post">
+          <form action="signupDB.jsp" name="registration" method="post">
             <input type="text" name="name" placeholder="Name" required />
             <input
               type="number"
@@ -42,7 +43,8 @@
               placeholder="Phone Number"
               required
             />
-            <input type="email" name="email" placeholder="Email" required />
+            <input type="email" name="email" id="email" placeholder="Email" required onkeyup="func1(this.value)"/>
+            <div id="result1"></div>
             <input
               type="password"
               name="passwd"
